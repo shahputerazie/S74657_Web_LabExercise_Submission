@@ -15,11 +15,9 @@ public class Employee {
     private String department;
     private double basicSalary;
 
-    // Empty default constructor
     public Employee() {
     }
 
-    // Getters and Setters
     public String getEmpId() {
         return empId;
     }
