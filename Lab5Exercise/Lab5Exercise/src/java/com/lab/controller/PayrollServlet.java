@@ -18,10 +18,8 @@ public class PayrollServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Create a list to hold employee objects
         List<Employee> list = new ArrayList<>();
 
-        // Populate with 5 different Employee objects
         Employee e1 = new Employee();
         e1.setEmpId("EMP001");
         e1.setName("Ahmad Ali");
@@ -52,17 +50,14 @@ public class PayrollServlet extends HttpServlet {
         e5.setDepartment("Operations");
         e5.setBasicSalary(3100.00);
 
-        // Add objects to the list
         list.add(e1);
         list.add(e2);
         list.add(e3);
         list.add(e4);
         list.add(e5);
 
-        // Share this list to the JSP
         request.setAttribute("employeeList", list);
 
-        // Forward the request to the view file
         RequestDispatcher rd = request.getRequestDispatcher("payroll_view.jsp");
         rd.forward(request, response);
     }
